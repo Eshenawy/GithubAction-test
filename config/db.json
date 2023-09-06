@@ -1,0 +1,21 @@
+{
+  "xxdevelopment": {
+    "dialect": "sqlite",
+    "storage": "./db.development.sqlite",
+    "logging": false 
+  },
+  "development": {
+    "username": "developer",
+    "password": "123456",
+    "database": "timeoff",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "developer",
+    "password": "123456",
+    "database": "timeoff",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
