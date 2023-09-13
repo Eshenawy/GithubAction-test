@@ -5,4 +5,5 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Create test_folder
+        run : cd /home/ubuntu
         run: mkdir test_folder
