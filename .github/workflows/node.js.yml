@@ -1,0 +1,8 @@
+name: Create folder
+on: [push]
+jobs:
+  create-folder:
+    runs-on: self-hosted
+    steps:
+      - name: Create test_folder
+        run: mkdir test_folder
