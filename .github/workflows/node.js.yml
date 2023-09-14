@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Create pull
         run: |
-            sudo
+            sudo su
             cd /home/ubuntu/GithubAction-test
             git pull origin main
   restart-pm:
