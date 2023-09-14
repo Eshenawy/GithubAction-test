@@ -1,4 +1,4 @@
-name: Create folder
+name: CICD Timeoff
 on: [push]
 jobs:
   pull-newversion:
@@ -6,18 +6,19 @@ jobs:
     steps:
       - name: Create pull
         run: |
-            sudo su
-            pwd
+            echo "Changing directory to /home/ubuntu/GithubAction-test"
             cd /home/ubuntu/GithubAction-test
-            pwd
+            echo "Current working directory is $(pwd)"
+            echo "Pulling changes from origin main"
             git pull origin main
   restart-pm:
     runs-on: self-hosted
+    needs: pull-newversion # This ensures that this job runs after the previous one
     steps:
-      - name: Create pull
+      - name: Restart pm
         run: |
-            sudo su
-            pwd
+            echo "Changing directory to /home/ubuntu/GithubAction-test"
             cd /home/ubuntu/GithubAction-test
-            pwd
-            pm2 restart timeoff
+            echo "Current working directory is $(pwd)"
+            echo "Restarting timeoff application with pm2"
+            /usr/local/bin/pm2 restart timeoff # Use the full path to pm2 executable
