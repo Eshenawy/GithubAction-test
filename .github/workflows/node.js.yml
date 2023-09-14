@@ -6,8 +6,9 @@ jobs:
     steps:
       - name: Restart pm
         run: |
+            sudo su
             echo "Changing directory to /home/ubuntu/GithubAction-test"
             cd /home/ubuntu/GithubAction-test
             echo "Current working directory is $(pwd)"
             echo "Restarting timeoff application with pm2"
-            /usr/local/bin/pm2 restart timeoff # Use the full path to pm2 executable
+            restart timeoff # Use the full path to pm2 executable
