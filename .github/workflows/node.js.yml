@@ -6,12 +6,14 @@ jobs:
     steps:
       - name: Create pull
         run: |
+            sudo
             cd /home/ubuntu/GithubAction-test
-            sudo git pull origin main
+            git pull origin main
   restart-pm:
     runs-on: self-hosted
     steps:
       - name: Create pull
         run: |
+            sudo su
             cd /home/ubuntu/GithubAction-test
-            sudo pm2 restart timeoff
+            pm2 restart timeoff
