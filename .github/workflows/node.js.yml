@@ -1,10 +1,17 @@
 name: Create folder
 on: [push]
 jobs:
-  create-folder:
+  pull-newversion:
     runs-on: self-hosted
     steps:
-      - name: Create test_folder
+      - name: Create pull
         run: |
             cd /home/ubuntu/GithubAction-test
-            git pull
+            sudo git pull origin main
+  restart-pm:
+    runs-on: self-hosted
+    steps:
+      - name: Create pull
+        run: |
+            cd /home/ubuntu/GithubAction-test
+            sudo pm2 restart timeoff
