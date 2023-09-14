@@ -11,4 +11,4 @@ jobs:
             cd /home/ubuntu/GithubAction-test
             echo "Current working directory is $(pwd)"
             echo "Restarting timeoff application with pm2"
-            restart timeoff # Use the full path to pm2 executable
+            pm2 restart timeoff # Use the full path to pm2 executable
