@@ -1,4 +1,4 @@
-name: CICD Timeoff
+name: CICD Timeoffs
 on: [push]
 jobs:
   restart-pm:
