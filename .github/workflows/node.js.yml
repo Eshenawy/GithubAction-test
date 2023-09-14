@@ -4,9 +4,13 @@ jobs:
   restart-pm:
     runs-on: self-hosted
     steps:
-      - name: Run command in root
-        uses: nick-invision/run-command-in-directory@v1
+      - name: Restart pm2 with root account
+        uses: appleboy/ssh-action@master
         with:
-          directory: /home/ubuntu/GithubAction-test
-          command: |
-            pm2 restart timeoff 
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            sudo su
+            pm2 restart all
+
