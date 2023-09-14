@@ -1,19 +1,8 @@
 name: CICD Timeoff
 on: [push]
 jobs:
-  pull-newversion:
-    runs-on: self-hosted
-    steps:
-      - name: Create pull
-        run: |
-            echo "Changing directory to /home/ubuntu/GithubAction-test"
-            cd /home/ubuntu/GithubAction-test
-            echo "Current working directory is $(pwd)"
-            echo "Pulling changes from origin main"
-            git pull origin main
   restart-pm:
     runs-on: self-hosted
-    needs: pull-newversion # This ensures that this job runs after the previous one
     steps:
       - name: Restart pm
         run: |
