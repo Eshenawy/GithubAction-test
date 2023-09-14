@@ -7,5 +7,5 @@ jobs:
     - name: Pull repository
       run: |
         cd /home/ubuntu/GithubAction-test
-        git pull origin main
+        sudo git pull origin main
 
