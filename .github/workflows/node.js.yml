@@ -4,13 +4,7 @@ jobs:
   restart-pm:
     runs-on: self-hosted
     steps:
-      - name: Restart pm2 with root account
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          script: |
-            sudo su
-            pm2 restart all
+    - name: Pull repository
+      run: |
+        git pull origin main
 
