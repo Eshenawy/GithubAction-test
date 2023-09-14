@@ -6,5 +6,6 @@ jobs:
     steps:
     - name: Pull repository
       run: |
+        cd /home/ubuntu/GithubAction-test
         git pull origin main
 
